@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Hack Tool - Admin Panel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+        body {
+            background-color: black;
+            color: #ff0000;
+            font-family: 'Share Tech Mono', monospace;
+            text-align: center;
+            padding-top: 30px;
+            transition: background 0.5s;
+        }
+
+        .hacker-container {
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #ff0000;
+            background: rgba(20, 20, 20, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px #ff0000;
+            text-align: left;
+        }
+
+        input, button {
+            padding: 12px;
+            margin-top: 10px;
+            width: 90%;
+            font-size: 18px;
+            border: 1px solid #ff0000;
+            background: black;
+            color: #ff0000;
+            font-family: 'Share Tech Mono', monospace;
+            outline: none;
+        }
+
+        button {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff0000;
+            color: black;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: left;
+            padding: 15px;
+            height: 250px;
+            overflow-y: auto;
+            background: black;
+            border: 1px solid #ff0000;
+            box-shadow: inset 0 0 10px #ff0000;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: black;
+            border: 1px solid #ff0000;
+            height: 20px;
+            margin-top: 10px;
+        }
+
+        .progress {
+            height: 100%;
+            background: #ff0000;
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+
+        @keyframes flashRed {
+            0% { background-color: black; }
+            50% { background-color: darkred; }
+            100% { background-color: black; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hacker-container">
+        <h1>🔴 Instagram Hacking Console</h1>
+        <p>Enter the Instagram username to hack:</p>
+        <input type="text" id="username" placeholder="Enter Username">
+        <button onclick="startHacking()">Start Hacking</button>
+        
+        <div id="output"></div>
+        <div class="progress-bar"><div class="progress" id="progress"></div></div>
+    </div>
+
+    <script>
+        function startHacking() {
+            let username = document.getElementById("username").value;
+            let output = document.getElementById("output");
+            let progress = document.getElementById("progress");
+
+            if (username === "") {
+                output.innerHTML = "<p>⚠️ ERROR: Enter a username first!</p>";
+                return;
+            }
+
+            output.innerHTML = `<p>🔍 Searching for user: <strong>${username}</strong></p>`;
+            progress.style.width = "0%";
+
+            let messages = [
+                "🛠️ Connecting to Instagram servers...",
+                "🔓 Bypassing security protocols...",
+                "⚡ Running brute-force attack...",
+                "🔑 Extracting password hashes...",
+                "📡 Locating recent login history...",
+                "💀 Injecting malicious payload...",
+                "🚀 Executing command: `hack.exe --force`",
+                "🛑 ALERT! Instagram Security Detected Anomaly!",
+                "⚠️ SYSTEM WARNING: IP ADDRESS TRACKED!",
+                "❌ HACK FAILED! Instagram security is too strong!"
+            ];
+
+            let i = 0;
+            let interval = setInterval(() => {
+                if (i < messages.length) {
+                    output.innerHTML += `<p>${messages[i]}</p>`;
+                    output.scrollTop = output.scrollHeight;
+                    progress.style.width = `${(i / messages.length) * 100}%`;
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    activatePrankMode();
+                }
+            }, 2000);
+        }
+
+        function activatePrankMode() {
+            let body = document.body;
+            let hackerContainer = document.querySelector(".hacker-container");
+
+            // Flashing Red Background
+            body.style.animation = "flashRed 0.3s infinite";
+
+            // Shake Effect
+            hackerContainer.style.animation = "shake 0.3s infinite";
+
+            // Add scary messages
+            setTimeout(() => {
+                alert("⚠️ WARNING: Your location is being tracked...");
+                alert("🚨 FBI ALERT: Your IP has been logged!");
+                alert("💀 CYBER SECURITY ALERT: Tracking Your Location Now...");
+            }, 2000);
+
+            setTimeout(() => {
+                let output = document.getElementById("output");
+                output.innerHTML += "<p>🚨 WARNING: You Are Being Tracked! 🚨</p>";
+                output.innerHTML += "<p>🚔 POLICE ALERT: Your IP has been logged.</p>";
+                output.innerHTML += "<p>💀 FBI ALERT: Tracking Your Location...</p>";
+            }, 3000);
+
+            // Play Siren Sound
+            let siren = new Audio("Siren.mp3");
+            setInterval(() => {
+                siren.play();
+            }, 2000);
+
+            // Activate Fake Blue Screen of Death (BSOD)
+            setTimeout(() => {
+                document.body.innerHTML = `
+                <div style="background: blue; color: white; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 30px;">
+                    <h1>💀 SYSTEM CRITICAL ERROR 💀</h1>
+                    <p>⚠️ ERROR CODE: 0xC000021A</p>
+                    <p>Your device ran into a problem and needs to restart. We're just collecting some error info...</p>
+                    <p>If you need help, contact your system administrator.</p>
+                    <p>🔍 SEARCH ONLINE FOR THIS ERROR: SYSTEM TRACKING FAILURE</p>
+                    <p style="font-size:50px;">0% Complete</p>
+                </div>`;
+            }, 10000);
+        }
+    </script>
+
+</body>
+</html>
