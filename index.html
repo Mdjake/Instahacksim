@@ -157,6 +157,7 @@
                 alert("⚠️ WARNING: Your location is being tracked...");
                 alert("🚨 FBI ALERT: Your IP has been logged!");
                 alert("💀 CYBER SECURITY ALERT: Tracking Your Location Now...");
+                alert("🚔 POLICE IS ON THE WAY!");
             }, 2000);
 
             setTimeout(() => {
@@ -164,10 +165,11 @@
                 output.innerHTML += "<p>🚨 WARNING: You Are Being Tracked! 🚨</p>";
                 output.innerHTML += "<p>🚔 POLICE ALERT: Your IP has been logged.</p>";
                 output.innerHTML += "<p>💀 FBI ALERT: Tracking Your Location...</p>";
+                output.innerHTML += "<p>🚔 POLICE IS ON THE WAY! 🚔</p>";
             }, 3000);
 
-            // Play Siren Sound
-            let siren = new Audio("Siren.mp3");
+            // Play Local Siren Sound
+            let siren = new Audio("siren.mp3");
             setInterval(() => {
                 siren.play();
             }, 2000);
